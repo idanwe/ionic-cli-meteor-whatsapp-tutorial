@@ -5,7 +5,7 @@
 // the 2nd parameter is an array of 'requires'
 // 'starter.services' is found in services.js
 // 'starter.controllers' is found in controllers.js
-angular.module('whatsapp', ['ionic', 'whatsapp.controllers', 'whatsapp.services'])
+angular.module('whatsapp', ['ionic', 'whatsapp.services'])
 
 .run(function($ionicPlatform) {
   $ionicPlatform.ready(function() {
