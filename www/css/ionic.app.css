@@ -7699,3 +7699,10 @@ a.button {
   opacity: 0;
   -webkit-transition-duration: 0s;
   transition-duration: 0s; }
+
+.item-chat .last-message-timestamp {
+  position: absolute;
+  top: 16px;
+  right: 38px;
+  font-size: 14px;
+  color: #9A9898; }
