@@ -1,5 +1,6 @@
 angular
   .module('whatsapp', [
     'ionic',
-    'whatsapp.services'
+    'whatsapp.services',
+    'angular-meteor'
   ]);
