@@ -19,10 +19,20 @@
 
     <label class="item-input-wrapper">
       <input
+        ng-model="data.message"
+        on-return="sendMessage()"
         on-focus="inputUp()"
         on-blur="inputDown()"
         dir="auto"
         type="text"/>
     </label>
+        <span ng-if="data.message.length > 0">
+      <button ng-click="sendMessage()" class="button button-clear button-positive">Send</button>
+    </span>
+    <span ng-if="!data.message || data.message.length === 0">
+      <button class="button button-clear button-icon button-positive icon ion-ios-camera-outline"></button>
+      <i class="buttons-seperator icon ion-android-more-vertical"></i>
+      <button class="button button-clear button-icon button-positive icon ion-ios-mic-outline"></button>
+    </span>
   </ion-footer-bar>
 </ion-view>
