@@ -13,4 +13,16 @@
       </div>
     </div>
   </ion-content>
+
+  <ion-footer-bar keyboard-attach class="bar-stable footer-chat item-input-inset">
+    <button class="button button-clear button-icon button-positive icon ion-ios-upload-outline"></button>
+
+    <label class="item-input-wrapper">
+      <input
+        on-focus="inputUp()"
+        on-blur="inputDown()"
+        dir="auto"
+        type="text"/>
+    </label>
+  </ion-footer-bar>
 </ion-view>
