@@ -11,6 +11,12 @@ function config ($stateProvider, $urlRouterProvider) {
       controller: 'LoginCtrl'
     })
 
+    .state('confirmation', {
+      url: '/confirmation/:phone',
+      templateUrl: 'templates/confirmation.html',
+      controller: 'ConfirmationCtrl'
+    })
+
     .state('tab', {
       url: '/tab',
       abstract: true,
