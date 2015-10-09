@@ -57,6 +57,16 @@ function config ($stateProvider, $urlRouterProvider) {
           controller: 'ChatDetailCtrl'
         }
       }
+    })
+
+    .state('tab.settings', {
+      url: '/settings',
+      views: {
+        'tab-settings': {
+          templateUrl: 'templates/tab-settings.html',
+          controller: 'SettingsCtrl'
+        }
+      }
     });
 
   // if none of the above states are matched, use this as the fallback
