@@ -20,13 +20,23 @@ function config ($stateProvider, $urlRouterProvider) {
     .state('profile', {
       url: '/profile',
       templateUrl: 'templates/profile.html',
-      controller: 'ProfileCtrl'
+      controller: 'ProfileCtrl',
+      resolve: {
+        user: ['$meteor', function ($meteor) {
+          return $meteor.requireUser();
+        }]
+      }
     })
 
     .state('tab', {
       url: '/tab',
       abstract: true,
-      templateUrl: 'templates/tabs.html'
+      templateUrl: 'templates/tabs.html',
+      resolve: {
+        user: ['$meteor', function ($meteor) {
+          return $meteor.requireUser();
+        }]
+      }
     })
 
     .state('tab.chats', {
