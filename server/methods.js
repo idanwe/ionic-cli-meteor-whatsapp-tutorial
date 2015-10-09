@@ -1,5 +1,10 @@
 Meteor.methods({
   newMessage(message) {
+    if (! this.userId) {
+      throw new Meteor.Error('not-logged-in',
+        'Must be logged to send a message.');
+    }
+
     check(message, {
       text: String,
       chatId: String
@@ -13,6 +18,11 @@ Meteor.methods({
   },
 
   updateName(name) {
+    if (! this.userId) {
+      throw new Meteor.Error('not-logged-in',
+        'Must be logged in to update his name.');
+    }
+
     check(name, String);
     if (name.length === 0) {
       throw Meteor.Error('name-required', 'Must provide user name');
