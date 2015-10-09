@@ -5,6 +5,12 @@ angular
 function config ($stateProvider, $urlRouterProvider) {
   $stateProvider
 
+    .state('login', {
+      url: '/login',
+      templateUrl: 'templates/login.html',
+      controller: 'LoginCtrl'
+    })
+
     .state('tab', {
       url: '/tab',
       abstract: true,
