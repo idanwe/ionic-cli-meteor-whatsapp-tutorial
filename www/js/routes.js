@@ -17,6 +17,12 @@ function config ($stateProvider, $urlRouterProvider) {
       controller: 'ConfirmationCtrl'
     })
 
+    .state('profile', {
+      url: '/profile',
+      templateUrl: 'templates/profile.html',
+      controller: 'ProfileCtrl'
+    })
+
     .state('tab', {
       url: '/tab',
       abstract: true,
