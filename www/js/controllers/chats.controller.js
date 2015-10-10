@@ -2,7 +2,7 @@ angular
   .module('whatsapp')
   .controller('ChatsCtrl', ChatsCtrl);
 
-function ChatsCtrl ($scope, $ionicModal) {
+function ChatsCtrl ($scope, $ionicModal, $meteor) {
   $scope.chats = $scope.$meteorCollection(Chats, false);
 
   $ionicModal.fromTemplateUrl('templates/new-chat.html', {
@@ -25,6 +25,6 @@ function ChatsCtrl ($scope, $ionicModal) {
   }
 
   function remove (chat) {
-    $scope.chats.remove(chat);
+    $meteor.call('removeChat', chat._id);
   }
 }
