@@ -19,3 +19,4 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 momentjs:moment
 check
 okland:accounts-phone
+reywood:publish-composite
