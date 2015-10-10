@@ -12,7 +12,7 @@
         class="item-chat item-remove-animate item-avatar item-icon-right"
         type="item-text-wrap"
         href="#/tab/chats/{{chat._id}}">
-        <img ng-src="{{chat.picture}}">
+        <img ng-src="{{chat | chatPicture}}">
         <h2>{{chat | chatName}}</h2>
         <p>{{chat.lastMessage.text}}</p>
         <span class="last-message-timestamp">{{chat.lastMessage.timestamp | calendar}}</span>
