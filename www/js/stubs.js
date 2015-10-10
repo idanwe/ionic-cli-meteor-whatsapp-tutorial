@@ -21,6 +21,13 @@ Meteor.methods({
     return Chats.insert(chat);
   },
 
+  removeChat: function (chatId) {
+    check(chatId, String);
+
+    Messages.remove({ chatId: chatId });
+    return Chats.remove({ _id: chatId });
+  },
+
   newMessage: function (message) {
     check(message, {
       text: String,
