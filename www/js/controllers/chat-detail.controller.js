@@ -12,10 +12,26 @@ function ChatDetailCtrl ($scope, $stateParams, $timeout, $ionicScrollDelegate) {
     }
   });
 
+  $scope.data = {};
+
+  $scope.sendMessage = sendMessage;
   $scope.inputUp = inputUp;
   $scope.inputDown = inputDown;
 
   ////////////
+
+  function sendMessage () {
+    if (_.isEmpty($scope.data.message)) {
+      return;
+    }
+
+    Meteor.call('newMessage', {
+      text: $scope.data.message,
+      chatId: $stateParams.chatId
+    });
+
+    delete $scope.data.message;
+  }
 
   function inputUp () {
     $timeout(function() {
