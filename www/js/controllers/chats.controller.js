@@ -29,6 +29,6 @@ function ChatsCtrl ($scope, $ionicModal) {
   }
 
   function remove (chat) {
-    Chats.remove({_id: chat._id});
+    Meteor.call('removeChat', chat._id);
   }
 }
